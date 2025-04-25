@@ -5,3 +5,10 @@
    body {
        background-color: var(--primary-color);
    }
+
+   .container {
+    width: 1240px;
+    margin: 100px auto;
+    // column-gap: 32px;
+    // column-count: 12;
+   }
