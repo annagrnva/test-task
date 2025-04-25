@@ -1,15 +1,15 @@
-import { Paragraph } from "./components"
-import { Primary } from "./components";
+import React from "react"
+import styles from "./app.module.scss"
+import { Header } from "./components"
+
+ 
 
 function App() {
   
   return (
-    <>
-    <Primary type="black">
-    <Paragraph type="bigLight">Paragraph </Paragraph>
-    <Paragraph type="bigMedium">Paragraph </Paragraph>
-    </Primary>
-    </>
+    <div className={styles.body}>
+      <Header />
+  </div>
   )
 }
 
