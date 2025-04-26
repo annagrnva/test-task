@@ -1,4 +1,5 @@
 import styles from "./style.module.scss";
+// import { Cards } from "../Cards";
 type Props = {
     children: React.ReactNode;
     images: string[];
@@ -6,6 +7,7 @@ type Props = {
 
 export const Gallery = ({ images, children }: Props) => {
 
+    // const names = ["CASCATE DI TIVOLI"]
     return (
         <div className={styles.imageContainer}>
             {children}
@@ -17,6 +19,7 @@ export const Gallery = ({ images, children }: Props) => {
                     className={styles.image} 
                     />
             ))}
+            {/* <Cards names={names}/> */}
         </div >
     )
 }

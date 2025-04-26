@@ -3,7 +3,6 @@ import icon from "./img/icon-1.png";
 
 type Props = {
     children: React.ReactNode;
-    data: string;
 };
 
 export const Search = () => {
