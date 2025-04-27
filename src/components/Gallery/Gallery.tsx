@@ -1,25 +1,24 @@
 import styles from "./style.module.scss";
-// import { Cards } from "../Cards";
+import { Cards } from "../Cards";
+
 type Props = {
-    children: React.ReactNode;
-    images: string[];
+    // children: React.ReactNode;
+    images: {src:string, name:string}[]
 }
 
-export const Gallery = ({ images, children }: Props) => {
+export const Gallery = ({ images }: Props) => {
 
-    // const names = ["CASCATE DI TIVOLI"]
     return (
         <div className={styles.imageContainer}>
-            {children}
+
             {images.map(( image, index ) => (
 
-                < img
+                < Cards
                     key={index}
-                    src={image}
-                    className={styles.image} 
+                    image={image.src}
+                    name={image.name}  
                     />
             ))}
-            {/* <Cards names={names}/> */}
         </div >
     )
 }

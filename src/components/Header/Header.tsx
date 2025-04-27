@@ -6,10 +6,10 @@ type Props = {
     children: React.ReactNode;
 }
 
-export const Header = ({ children }: Props) => {
+export const Header = () => {
     return (
         <header className={styles.flexbox}>
-            {children}
+            {/* {children} */}
             <img src={logo} alt="logo" />
 
             <div className={styles.themeButton}>

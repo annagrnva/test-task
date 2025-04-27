@@ -12,7 +12,15 @@ import image6 from "./images/image6.png"
 
 
 function App() {
-  const images = [image1, image2, image3, image4, image5, image6]
+  const images = [
+    {src: image1, name: "CASCATE DI TIVOLI"}, 
+    {src: image2, name: "PORTRAIT OF VINCENT VAN GOGH"}, 
+    {src: image3, name: "UNEQUAL MARRIAGE"}, 
+    {src: image4, name: "THE HAPPY VIOLINIST"},
+    {src: image5, name: "THE ARCADIAN"}, 
+    {src: image6, name: "GOLFO DI NAPOLI"}, 
+  ]
+
 
   return (
     <div className={styles.container}>

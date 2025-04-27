@@ -1,5 +1,16 @@
-.cardsContainer {
-    width: 300;
-    height: 82;
-    background-color: #121212;
+.card {
+    // background-color: #121212;
+    position: absolute;
+}
+
+.cardImage {
+}
+.lable {
+     position: relative;
+     left: 0px;
+}
+.cardTitle {
+    margin: 10px 0;
+    font-size: 16px;
+    color: aliceblue;
 }
