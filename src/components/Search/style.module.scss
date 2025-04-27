@@ -1,4 +1,5 @@
 .formSearch {
+    position: absolute;
     padding: 8px 16px 8px 40px;
     border: #575757;
     color: #575757;
@@ -6,16 +7,15 @@
 }
 
 .searchContainer {
-    position: relative;
+   display: flex;
+   justify-content: end;
   
 }
 
 .icon {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none;
+    position: relative;
+    right: 191px;
+    transform: translateY(25%);
 }
 
 .position {

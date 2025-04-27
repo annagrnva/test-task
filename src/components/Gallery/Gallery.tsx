@@ -3,7 +3,7 @@ import { Cards } from "../Cards";
 
 type Props = {
     // children: React.ReactNode;
-    images: {src:string, name:string}[]
+    images: {src:string, name:string, date:string}[]
 }
 
 export const Gallery = ({ images }: Props) => {
@@ -17,6 +17,7 @@ export const Gallery = ({ images }: Props) => {
                     key={index}
                     image={image.src}
                     name={image.name}  
+                    date={image.date}
                     />
             ))}
         </div >
