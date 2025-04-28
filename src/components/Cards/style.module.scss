@@ -1,21 +1,36 @@
 .card {
-    // background-color: #121212;
-    // position: absolute;
+  // background-color: #121212;
+  // position: absolute;
+  position: relative;
 }
 
 .cardImage {
 }
 .lable {
-    //  position: relative;
-     left: 0px;
+  width: 300px;
+  position: absolute;
+  //   padding: 20px 0 20px 20;
+  padding-left: 20;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  left: 0px;
+  bottom: 0;
+  background-color: var(--primary-black);
+}
+
+.cardLine {
+  width: 42;
+  top: 198px;
+  border-left: 2px solid #ab8956;
+  transform: translateX(-50%);
 }
 .cardTitle {
-    margin: 10px 0;
-    font-size: 16px;
-    color: aliceblue;
+  margin: 10px 0;
+  font-size: 16px;
+  color: var(--primary-light_gray);
 }
 
 .cardDate {
-    color: #AB8956;
-
+  color: var(--accent-gold);
 }

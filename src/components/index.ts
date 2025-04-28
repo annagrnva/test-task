@@ -1,5 +1,4 @@
 export * from "./Typography"
-export * from "./Colors"
 export * from "./Header"
 export * from "./Search"
 export * from "./Gallery"

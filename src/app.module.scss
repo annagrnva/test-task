@@ -1,14 +1,17 @@
-   :root {
-       --primary-color: #121212;
-   }
+:root {
+  --primary-black: #121212;
+  --primary-light_gray: #dedede;
+  --accent-gold: #ab8956;
+  --accent-red: #9b4b4b;
+}
 
-   body {
-       background-color: var(--primary-color);
-   }
+body {
+  background-color: var(--primary-black);
+}
 
-   .container {
-    width: 1240px;
-    margin: 0 53px ;
-    // column-gap: 32px;
-    // column-count: 12;
-   }
+.container {
+  width: 1240px;
+  margin: 0 53px;
+  // column-gap: 32px;
+  // column-count: 12;
+}
