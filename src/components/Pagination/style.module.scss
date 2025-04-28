@@ -1,0 +1,10 @@
+.number {
+  color: var(--primary-light_gray);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 40px 0 100px;
+}

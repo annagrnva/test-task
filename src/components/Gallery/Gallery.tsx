@@ -1,11 +1,11 @@
 import styles from "./style.module.scss";
 import { Cards } from "../Cards";
-import image1 from "../../images/image1.png";
-import image2 from "../../images/image2.png";
-import image3 from "../../images/image3.png";
-import image4 from "../../images/image4.png";
-import image5 from "../../images/image5.png";
-import image6 from "../../images/image6.png";
+import image1 from "../../assets/images/image1.png";
+import image2 from "../../assets/images/image2.png";
+import image3 from "../../assets/images/image3.png";
+import image4 from "../../assets/images/image4.png";
+import image5 from "../../assets/images/image5.png";
+import image6 from "../../assets/images/image6.png";
 
 const images = [
   { src: image1, name: "CASCATE DI TIVOLI", date: 1761 },
