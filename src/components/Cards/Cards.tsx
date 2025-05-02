@@ -7,9 +7,11 @@ type Props = {
   image: string;
   name: string;
   date: number;
+  hoverName: string;
+  hoverDate: string;
 };
 
-export const Cards = ({ image, name, date }: Props) => {
+export const Cards = ({ image, name, date, hoverName, hoverDate }: Props) => {
   return (
     <>
       <div className={styles.card}>
@@ -18,10 +20,12 @@ export const Cards = ({ image, name, date }: Props) => {
           <div className={styles.cardLine}></div>
           <div className={styles.cardInfo}>
             <Heading type="h1MediumUppercase" className={styles.cardTitle}>
-              {name}
+              <span className={styles.originalText}>{name}</span>
+              <span className={styles.hoverText}>{hoverName}</span>
             </Heading>
             <Caption type="captionBoldUppercase12" className={styles.cardDate}>
-              {date}
+              <span className={styles.originalDate}>{date}</span>
+              <span className={styles.hoverDate}>{hoverDate}</span>
             </Caption>
           </div>
         </div>

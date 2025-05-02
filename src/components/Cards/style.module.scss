@@ -1,36 +1,64 @@
 .card {
-  // background-color: #121212;
-  // position: absolute;
   position: relative;
+  overflow: hidden;
 }
 
 .cardImage {
+  transition: transform 0.6s;
+  width: 100%;
+  height: 100%;
 }
+
 .lable {
+  display: flex;
+  align-items: center;
+  gap: 20px;
   width: 300px;
   position: absolute;
-  //   padding: 20px 0 20px 20;
-  padding-left: 20;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-right: 20px;
+  padding: 20px 0;
   left: 0px;
   bottom: 0;
   background-color: var(--primary-black);
 }
 
 .cardLine {
-  width: 42;
-  top: 198px;
+  height: 50px;
   border-left: 2px solid #ab8956;
-  transform: translateX(-50%);
 }
+
 .cardTitle {
   margin: 10px 0;
   font-size: 16px;
   color: var(--primary-light_gray);
+  position: relative;
+}
+
+.card:hover .originalText {
+  display: none;
+}
+
+.card:hover .hoverText {
+  display: inline;
+}
+
+.originalText,
+.originalDate {
+  display: inline;
+}
+
+.hoverText,
+.hoverDate {
+  display: none;
 }
 
 .cardDate {
   color: var(--accent-gold);
+}
+
+.card:hover .hoverDate {
+  display: inline;
+}
+
+.card:hover .originalDate {
+  display: none;
 }
