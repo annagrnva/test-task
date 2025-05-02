@@ -9,6 +9,9 @@
   height: 100%;
 }
 
+.card:hover .cardImage {
+  transform: scale(1.1);
+}
 .lable {
   display: flex;
   align-items: center;
@@ -62,3 +65,7 @@
 .card:hover .originalDate {
   display: none;
 }
+
+// .cardInfo {
+// position: relative;
+// }
