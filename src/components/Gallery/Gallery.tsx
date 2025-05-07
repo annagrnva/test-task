@@ -1,68 +1,36 @@
 import styles from "./style.module.scss";
 import { Cards } from "../Cards";
-import image1 from "../../assets/images/image1.png";
-import image2 from "../../assets/images/image2.png";
-import image3 from "../../assets/images/image3.png";
-import image4 from "../../assets/images/image4.png";
-import image5 from "../../assets/images/image5.png";
-import image6 from "../../assets/images/image6.png";
-
-const images = [
-  {
-    src: image1,
-    name: "CASCATE DI TIVOLI",
-    date: 1761,
-    hoverName: "JEAN-HONORE FRAGONARD",
-    hoverDate: "LOUVRE MUSEUM",
-  },
-  {
-    src: image2,
-    name: "PORTRAIT OF VINCENT VAN GOGH",
-    date: 1886,
-    hoverName: "JEAN-HONORE FRAGONARD",
-    hoverDate: "LOUVRE MUSEUM",
-  },
-  {
-    src: image3,
-    name: "UNEQUAL MARRIAGE",
-    date: 1862,
-    hoverName: "JEAN-HONORE FRAGONARD",
-    hoverDate: "LOUVRE MUSEUM",
-  },
-  {
-    src: image4,
-    name: "THE HAPPY VIOLINIST",
-    date: 1624,
-    hoverName: "JEAN-HONORE FRAGONARD",
-    hoverDate: "LOUVRE MUSEUM",
-  },
-  {
-    src: image5,
-    name: "THE ARCADIAN",
-    date: 1834,
-    hoverName: "JEAN-HONORE FRAGONARD",
-    hoverDate: "LOUVRE MUSEUM",
-  },
-  {
-    src: image6,
-    name: "GOLFO DI NAPOLI",
-    date: 1845,
-    hoverName: "JEAN-HONORE FRAGONARD",
-    hoverDate: "LOUVRE MUSEUM",
-  },
-];
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { PaintType } from "../../types";
+import { BASE_BACKEND_URL, REQUEST_URLS } from "../../constants";
 
 export const Gallery = () => {
+  const [images, setImages] = useState<PaintType[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    setIsLoading(true);
+    axios.get(REQUEST_URLS.PAINTINGS).then((response) => {
+      setImages(response.data);
+      setIsLoading(false);
+    });
+  }, []);
+
+  if (true) {
+    return <div style={{ color: "white" }}>Loading</div>;
+  }
+
   return (
     <div className={styles.imageContainer}>
-      {images.map((image, index) => (
+      {images.map((image) => (
         <Cards
-          key={index}
-          image={image.src}
-          name={image.name}
-          date={image.date}
-          hoverName={image.hoverName}
-          hoverDate={image.hoverDate}
+          key={image.id}
+          image={`${BASE_BACKEND_URL}${image.imageUrl}`}
+          title={image.name}
+          date={image.created}
+          hoverName={"image.hoverName"}
+          hoverDate={"image.hoverDate"}
         />
       ))}
     </div>
