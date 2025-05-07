@@ -4,6 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { PaintType } from "../../types";
 import { BASE_BACKEND_URL, REQUEST_URLS } from "../../constants";
+import { Loader } from "../Loader";
 
 export const Gallery = () => {
   const [images, setImages] = useState<PaintType[]>([]);
@@ -11,14 +12,16 @@ export const Gallery = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    axios.get(REQUEST_URLS.PAINTINGS).then((response) => {
-      setImages(response.data);
-      setIsLoading(false);
-    });
+    axios
+      .get(`${REQUEST_URLS.PAINTINGS}?_page=1&_limit=6 `)
+      .then((response) => {
+        setImages(response.data);
+        setIsLoading(false);
+      });
   }, []);
 
-  if (true) {
-    return <div style={{ color: "white" }}>Loading</div>;
+  if (isLoading) {
+    return <Loader />;
   }
 
   return (
