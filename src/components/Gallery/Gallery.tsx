@@ -7,17 +7,17 @@ import { BASE_BACKEND_URL, REQUEST_URLS } from "../../constants";
 import { Loader } from "../Loader";
 
 export const Gallery = () => {
-  const [images, setImages] = useState<PaintType[]>([]);
+  // const [images, setImages] = useState<PaintType[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
-    axios
-      .get(`${REQUEST_URLS.PAINTINGS}?_page=1&_limit=6 `)
-      .then((response) => {
-        setImages(response.data);
-        setIsLoading(false);
-      });
+    // axios
+    //   .get(`${REQUEST_URLS.PAINTINGS}?_page=1&_limit=6 `)
+    //   .then((response) => {
+    //     setImages(response.data);
+    setIsLoading(false);
+    // });
   }, []);
 
   if (isLoading) {
