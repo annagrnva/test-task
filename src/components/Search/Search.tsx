@@ -6,15 +6,12 @@ import { useState } from "react";
 
 export const Search = () => {
   const [searchValue, setSearchValue] = useState("");
-  const [foundPaintings, setFoundPaintings] = useState([]);
 
   const handleSearch = (value: string) => {
-    axios
-      .get(`${REQUEST_URLS.PAINTINGS}?_page=1&_limit=6 `)
-      .then((response) => {
-        setFoundPaintings(response.data);
-        console.log(setFoundPaintings);
-      });
+    axios.get(`${REQUEST_URLS.PAINTINGS}?q=${value} `).then((response) => {
+      setSearchValue(response.data);
+      console.log(setSearchValue);
+    });
   };
 
   return (
@@ -25,7 +22,7 @@ export const Search = () => {
           type="text"
           placeholder="Painting title"
           value={searchValue}
-          // onChange={handleSearch}
+          onChange={handleSearch}
         />
         <img
           className={styles.icon}

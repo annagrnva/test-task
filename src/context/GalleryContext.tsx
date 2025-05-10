@@ -1,18 +1,24 @@
 import axios from "axios";
-import { useEffect, useState, createContext } from "react";
+import { useState, createContext, useContext } from "react";
 import { PaintType } from "../types";
-import { BASE_BACKEND_URL, REQUEST_URLS } from "../constants";
+import { REQUEST_URLS } from "../constants";
 
-const PaintingContext = createContext({
-  images: [],
-});
+export const GalleryContext = createContext();
 
-const GalleryContext = () => {
+export const GalleryProvider = () => {
   const [images, setImages] = useState<PaintType[]>([]);
 
-  axios.get(`${REQUEST_URLS.PAINTINGS}?_page=1&_limit=6 `).then((response) => {
-    setImages(response.data);
-  });
-};
+  const updateImages = () => {
+    axios
+      .get(`${REQUEST_URLS.PAINTINGS}?_page=1&_limit=6 `)
+      .then((response) => {
+        setImages(response.data);
+      });
+  };
 
-GalleryContext();
+  return (
+    <GalleryContext.Provider
+      value={{ images, updateImages }}
+    ></GalleryContext.Provider>
+  );
+};

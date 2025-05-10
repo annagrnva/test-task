@@ -1,23 +1,21 @@
 import styles from "./style.module.scss";
 import { Cards } from "../Cards";
 import axios from "axios";
-import { useEffect, useState } from "react";
-import { PaintType } from "../../types";
+import { useEffect, useState, createContext, useContext } from "react";
 import { BASE_BACKEND_URL, REQUEST_URLS } from "../../constants";
 import { Loader } from "../Loader";
+import { GalleryContext } from "../../context/GalleryContext";
 
 export const Gallery = () => {
-  // const [images, setImages] = useState<PaintType[]>([]);
+  const { images, updateImages } = useContext(GalleryContext);
+
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
-    // axios
-    //   .get(`${REQUEST_URLS.PAINTINGS}?_page=1&_limit=6 `)
-    //   .then((response) => {
-    //     setImages(response.data);
+    updateImages();
+    // <GalleryContext></GalleryContext>;
     setIsLoading(false);
-    // });
   }, []);
 
   if (isLoading) {
